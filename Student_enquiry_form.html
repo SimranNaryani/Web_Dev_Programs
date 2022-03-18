@@ -1,0 +1,69 @@
+<!-- This is the code for creating a simple student enquiry form using basic HTML, CSS and JavaScript -->
+<html>
+<head>
+<script>
+<!-- JavaScript function for form operations -->
+function validateForm() {
+   if(document.myForm.name.value.match(/^[A-Za-z]+$/))
+     {       
+     }
+   else
+     {
+	alert("Please Enter Characters only in Name field. ");
+	document.myForm.name.focus();
+        return false;
+     }
+    if(document.myForm.phone.value.match(/^[0-9]+$/))  
+      {  
+   	message += "<br>NAME:" + document.myForm.name.value;
+                 message += "<br>GENDER: " + document.myForm.G.value;
+                 message += "<br>CLASS: " + document.myForm.section.value;
+                 message += "<br>ROLL NO.: " + document.myForm.roll.value;
+                 message += "<br>PHONE NO.: " + document.myForm.phone.value;
+	message += "<br>DATE OF BIRTH: " + document.myForm.DOB.value;
+	message += "<br>EMAIL ID: " + document.myForm.email.value;
+  	message += "<br>ADDRESS: " + document.myForm.address.value;
+	document.write(message); 
+      }  
+      else  
+      {  
+        alert('Please enter numbers in phone.'); 
+	document.myForm.phone.focus();  
+        return false; 
+      }  
+   }
+</script>
+
+</head>
+
+<body style="background-color:#d9e6f2;">
+<form name="myForm" onsubmit="return validateForm()">
+<h1> Student Enquiry Form </h1>
+  
+Name: <input type="text" name="name" required> <br><br>
+
+Gender: 
+<input type="radio" name="G" value="Male" checked>Male
+<input type="radio" name="G" value="Female" >Female
+<input type="radio" name="G" value="Other" >Other
+<br><br>
+
+Class: <select name="section">
+<option> TE 1</option>
+<option> TE 2 </option>
+</select>
+<br><br>
+
+Roll No: <input type="text" name="roll" maxlength=5 required> <br><br>
+
+Phone No: <input type="text" name="phone" maxlength=10 required> <br><br>
+
+Email: <input type="Email" name="email" required> <br><br>
+
+Address: <input type="text" name="address" required> <br><br>
+
+<input type="submit" value="Submit">
+
+</form>
+</body>
+</html>
